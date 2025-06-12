@@ -22,24 +22,6 @@ conda activate pso-head
 ## Obtaining camera pose and cropping the images
 
 Please follow the [guide](Pose Estimator/cropping_guide.md)
-### Steps
-
-
-#### 1. cd to 3DDFA_V2. 
-```.bash
-cd 3DDFA_V2
-```
-
-#### 2. Extract face keypoints using dlib. 
-```.bash
-python dlib_kps.py 
-```
-
-#### 3. Obtaining camera poses and cropping the images using recrop_images.py
-
-```.bash
-python recrop_images.py -i data.pkl -j dataset.json
-```
 
 ## Generate full head reconstruction from a single RGB image
 ```
