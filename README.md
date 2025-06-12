@@ -2,7 +2,14 @@
 
 
 ![FIRST image](./misc/first.png)
-![FIRST image](img src="./misc/post1.gif"  width="60%")
+<img src="./misc/post1.gif"  width="24%">
+<img src="./misc/post2.gif"  width="24%">
+<img src="./misc/post3.gif"  width="24%">
+<img src="./misc/post4.gif"  width="24%">
+<img src="./misc/post5.gif"  width="24%">
+<img src="./misc/post6.gif"  width="24%">
+<img src="./misc/post7.gif"  width="24%">
+<img src="./misc/post8.gif"  width="24%">
 
 **PSO-HEAD: Pseudo-Supervision Guided Spatial Optimization for View-consistent 3D Full-Head Reconstruction**<br>
 Yiheng Zhang, Peng ZHang, XiaoLin Zhang
