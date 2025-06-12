@@ -49,10 +49,6 @@ python recrop_images.py -i data.pkl -j dataset.json
 # Please refer to ./gen_pti_script.sh
 ```
 
-
-
-
-
 ## Datasets
 Due to the license issue, we are not able to release [Flickr-Faces-HQ dataset](https://github.com/NVlabs/ffhq-dataset) and [K-Hairstyle dataset](https://psh01087.github.io/K-Hairstyle/) that we used to train the model. [test_data_img](./dataset/testdata_img/) and [test_data_seg](./dataset/testdata_seg/) are just an example for showing the dataset struture. For the camera pose convention, please refer to [PanoHead](https://sizhean.github.io/panohead). 
 
@@ -63,23 +59,6 @@ To compress dataset folder to zip file, we can use [dataset_tool_seg](./dataset_
 
 ## Obtaining segmentation masks
 You can try using deeplabv3 or other off-the-shelf tool to generate the masks.
-
-## Using networks from Python
-
-You can use pre-trained networks in your own Python code as follows:
-
-```.python
-with open('*.pkl', 'rb') as f:
-    G = pickle.load(f)['G_ema'].cuda()  # torch.nn.Module
-z = torch.randn([1, G.z_dim]).cuda()    # latent codes
-c = torch.cat([cam2world_pose.reshape(-1, 16), intrinsics.reshape(-1, 9)], 1) # camera parameters
-img = G(z, c)['image']                           # NCHW, float32, dynamic range [-1, +1], no truncation
-mask = G(z, c)['image_mask']                    # NHW, int8, [0,255]
-```
-
-The above code requires `torch_utils` and `dnnlib` to be accessible via `PYTHONPATH`. It does not need source code for the networks themselves &mdash; their class definitions are loaded from the pickle via `torch_utils.persistence`.
-
-
 
 
 
